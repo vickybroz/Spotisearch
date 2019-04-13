@@ -4,7 +4,7 @@ export interface IFullSearchResults {
     artists: ISearchResult<IArtist>;
     tracks: ISearchResult<ITrack>;
     albums: ISearchResult<IAlbum>;
-  }
+}
 
 interface ISearchResult<Type> {
     href: string;
