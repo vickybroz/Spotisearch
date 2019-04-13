@@ -1,0 +1,24 @@
+.album-box {
+    border:1px solid black;
+    padding:10px;
+    display: inline-block;
+    width: 48%;
+}
+
+.wrapper-albums{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.album-box img {
+    width: 100px;
+    margin-right:10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.album-box .info{
+    display: inline-block;
+    vertical-align: top;
+}
+

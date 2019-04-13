@@ -1,0 +1,21 @@
+<section class="welcome">
+    
+        <p><strong>Welcome to</strong></p>
+        <h1>Spotisearch</h1>
+    
+        <p>Search your favourite songs over Spotify. Just enter an artist name in the following search box and enjoy!</p>
+    
+        <div class="wrapper">
+            <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input type="text"/>
+        </div>
+        <!-- aca voy a tirar unos resultados así a lo bestia para probar-->
+        <ul class="dummydata">
+            <li *ngFor="let ddata of dummydata.artists.items ">
+              <a routerLink="#">
+                <span class="badge">{{ddata.name}}</span> {{ddata.type}}
+              </a>
+            </li>
+          </ul>
+
+   
+  </section>
