@@ -27,6 +27,11 @@ h2 {
     margin-bottom:10px;
 }
 
+ul {
+    padding:0;
+    list-style: none;
+}
+
 p {
     margin-top:0;
 }
@@ -54,4 +59,23 @@ img {
 .col-half {
     display: inline-block;
     width: 50%;
+}
+
+.album-box {
+    border:1px solid black;
+    padding:10px;
+    display: inline-block;
+    width: 48%;
+    margin-bottom:10px;
+}
+
+.album-box img {
+    width: 100px;
+    margin-right:10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.album-box .info{
+    display: inline-block;
+    vertical-align: top;
 }

@@ -810,7 +810,7 @@ export class SpotifyService {
                 "id": "0rmGAIH9LNJewFw7nKzZnc",
                 "is_local": false,
                 "name": "You Give Love A Bad Name",
-                "popularity": 78,
+                "popularity": 79,
                 "preview_url": null,
                 "track_number": 2,
                 "type": "track",
@@ -824,6 +824,7 @@ export class SpotifyService {
         "total": 7237
     }
   };
+  
 
   constructor() { }
 

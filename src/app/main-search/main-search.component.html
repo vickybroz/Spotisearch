@@ -9,13 +9,62 @@
             <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input type="text"/>
         </div>
         <!-- aca voy a tirar unos resultados así a lo bestia para probar-->
+      
+        <!-- {{resultados | json }} -->
+
+
+
         <ul class="resultados">
-            <li *ngFor="let resultado of resultados.artists.items ">
-              <a routerLink="#">
-                <span class="badge">{{resultado.name}}</span> {{resultado.type}}
-              </a>
+            <li *ngFor="let resultadoa of resultados.albums.items">
+                <a routerLink="#">
+                    <article class="album-box">
+                        <img src="{{resultadoa.images[2].url}}">
+                        <div class="info">
+                                <p><strong>{{resultadoa.name}}</strong></p>
+                                <p><i>Tipo: {{resultadoa.type | titlecase }}</i></p>
+                                <p  *ngFor="let resultadoa2 of resultadoa.artists">
+                                    <i>Artist: {{resultadoa2.name | titlecase}}</i>
+                                </p>
+
+                        </div>         
+                    </article>              
+                </a>
             </li>
-          </ul>
+        </ul>
+
+        <ul class="resultados">
+            <li *ngFor="let resultadob of resultados.artists.items ">
+                <a routerLink="#">
+                    <article class="album-box">
+                        <img src="{{resultadob.images[2].url}}">
+                        <div class="info">
+                                <p><strong>{{resultadob.name}}</strong></p>
+                                <p><i>Tipo: {{resultadob.type | titlecase }}</i></p>
+                        </div>         
+                    </article>              
+                </a>
+            </li>
+        </ul>
+  
+        <ul class="resultados">
+            <li *ngFor="let resultadoc of resultados.tracks.items ">
+                <a routerLink="#">
+                    <article class="album-box">
+                        <div class="info">
+                                
+                                <p><strong>{{resultadoc.name}}</strong></p>
+                                <p><i> Tipo:  {{resultadoc.type | titlecase }}</i></p>
+                                <p  *ngFor="let resultadoc2 of resultadoc.artists">
+                                        <i>Artist: {{resultadoc2.name | titlecase}}</i>
+                                </p>
+                                <p><i> Album:  {{resultadoc.album.name | titlecase }}</i></p>
+
+    
+                        </div>         
+                    </article>              
+                </a>
+            </li>
+        </ul>
 
    
   </section>
