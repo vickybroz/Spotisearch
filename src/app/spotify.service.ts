@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IFullSearchResults } from './Iitems';
+import { IArtist } from './Iitems';
+import { IAlbumSlim } from './Iitems';
+import { IArtists } from './Iitems';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class SpotifyService {
 
   // Resultados de una consulta tipo de spotify
@@ -825,10 +827,573 @@ export class SpotifyService {
     }
   };
   
+  dummyartist: IArtist ={
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+    },
+    "followers": {
+      "href": null,
+      "total": 6817565
+    },
+    "genres": [
+      "dance pop",
+      "latin",
+      "miami hip hop",
+      "pop",
+      "pop rap"
+    ],
+    "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+    "id": "0TnOYISbd1XYRBk9myaseg",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/c82dfff224bfb7fe29e0364a5aacc55da29b465b",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/d482525120fc7eed9ea0696f564c6cba5237c8f5",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/49a45aac2c93bab9575de13cee2d71b7eb164cab",
+        "width": 160
+      }
+    ],
+    "name": "Pitbull",
+    "popularity": 83,
+    "type": "artist",
+    "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+  };
 
+  dummyArtistAlbums :  IAlbumSlim = {
+    "href": "https://api.spotify.com/v1/artists/7n0PIkv81aZaXNeGoO5SeC/albums?offset=0&limit=10&include_groups=album,single,compilation,appears_on",
+    "items": [
+      {
+        "album_group": "single",
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7n0PIkv81aZaXNeGoO5SeC"
+            },
+            "href": "https://api.spotify.com/v1/artists/7n0PIkv81aZaXNeGoO5SeC",
+            "id": "7n0PIkv81aZaXNeGoO5SeC",
+            "name": "In The Name Of Love",
+            "type": "artist",
+            "uri": "spotify:artist:7n0PIkv81aZaXNeGoO5SeC"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/5yzBsWcbgYvGx0p2D5wsGg"
+        },
+        "href": "https://api.spotify.com/v1/albums/5yzBsWcbgYvGx0p2D5wsGg",
+        "id": "5yzBsWcbgYvGx0p2D5wsGg",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/38c5ecb78879ee7833ae1fa448b3debfffacf50e",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/80f643a15c6e04d3850adc977070f6c84350cfe5",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/a2a33ec8abf80766ff15c488e2dca9de6d5b3687",
+            "width": 64
+          }
+        ],
+        "name": "Lead Me",
+        "release_date": "2017-03-14",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:5yzBsWcbgYvGx0p2D5wsGg"
+      },
+      {
+        "album_group": "single",
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7n0PIkv81aZaXNeGoO5SeC"
+            },
+            "href": "https://api.spotify.com/v1/artists/7n0PIkv81aZaXNeGoO5SeC",
+            "id": "7n0PIkv81aZaXNeGoO5SeC",
+            "name": "In The Name Of Love",
+            "type": "artist",
+            "uri": "spotify:artist:7n0PIkv81aZaXNeGoO5SeC"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/4XDOWRqNFU7YWBRKsVsTaG"
+        },
+        "href": "https://api.spotify.com/v1/albums/4XDOWRqNFU7YWBRKsVsTaG",
+        "id": "4XDOWRqNFU7YWBRKsVsTaG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/d7ea4f60b12b6cb37e11142ca94e620d2069369a",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/7aecff3667c54acc40148e3c02b8e040c73c9210",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/04e034d48cdb51f534c43924f7bb74e9c611778c",
+            "width": 64
+          }
+        ],
+        "name": "You and Me (Instrumental Version)",
+        "release_date": "2017-01-20",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:4XDOWRqNFU7YWBRKsVsTaG"
+      },
+      {
+        "album_group": "appears_on",
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0x2XI80j3IAQYRmsi7rDmA"
+            },
+            "href": "https://api.spotify.com/v1/artists/0x2XI80j3IAQYRmsi7rDmA",
+            "id": "0x2XI80j3IAQYRmsi7rDmA",
+            "name": "Loyal World",
+            "type": "artist",
+            "uri": "spotify:artist:0x2XI80j3IAQYRmsi7rDmA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/6RXMHYLEASCAmXQnguGAEw"
+        },
+        "href": "https://api.spotify.com/v1/albums/6RXMHYLEASCAmXQnguGAEw",
+        "id": "6RXMHYLEASCAmXQnguGAEw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/cb28bc820365e940b198f90888e2afa1d3cd1857",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/fb43429233d720f0c1508837171a94e9c0070114",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/301a1827f496c6b5d9183664307b5978ce89b7b4",
+            "width": 64
+          }
+        ],
+        "name": "De Wereld Draait Door (Radio Edit)",
+        "release_date": "2017-01-17",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:6RXMHYLEASCAmXQnguGAEw"
+      }
+    ],
+    "limit": 10,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 3
+  };
+
+
+    dummyArtists :  IArtists = {
+    "artists": [
+        {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/2CIMQHirSU0MQqyYHq0eOx"
+        },
+        "followers": {
+            "href": null,
+            "total": 2205816
+        },
+        "genres": [
+            "big room",
+            "edm",
+            "electro house",
+            "progressive house"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2CIMQHirSU0MQqyYHq0eOx",
+        "id": "2CIMQHirSU0MQqyYHq0eOx",
+        "images": [
+            {
+            "height": 640,
+            "url": "https://i.scdn.co/image/86e8991077d6ce237be8f24dbc65e90f2e1f2a43",
+            "width": 640
+            },
+            {
+            "height": 320,
+            "url": "https://i.scdn.co/image/cd362662352ce88b693b1a31cf5c9784730291dd",
+            "width": 320
+            },
+            {
+            "height": 160,
+            "url": "https://i.scdn.co/image/70e010473dc0f158253111e035c71086fb7904fa",
+            "width": 160
+            }
+        ],
+        "name": "deadmau5",
+        "popularity": 71,
+        "type": "artist",
+        "uri": "spotify:artist:2CIMQHirSU0MQqyYHq0eOx"
+        },
+        {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/57dN52uHvrHOxijzpIgu3E"
+        },
+        "followers": {
+            "href": null,
+            "total": 442827
+        },
+        "genres": [
+            "alternative dance",
+            "indietronica",
+            "new rave"
+        ],
+        "href": "https://api.spotify.com/v1/artists/57dN52uHvrHOxijzpIgu3E",
+        "id": "57dN52uHvrHOxijzpIgu3E",
+        "images": [
+            {
+            "height": 693,
+            "url": "https://i.scdn.co/image/2f0c6c465a83cd196e651e3d4e7625ba799a6f60",
+            "width": 1000
+            },
+            {
+            "height": 444,
+            "url": "https://i.scdn.co/image/4e3e13c8b993bde9898e49509fb9ae121636e05f",
+            "width": 640
+            },
+            {
+            "height": 139,
+            "url": "https://i.scdn.co/image/dc68dd24b45b74ecce9d4ed486423673d683ced3",
+            "width": 200
+            },
+            {
+            "height": 44,
+            "url": "https://i.scdn.co/image/4e55ca05d4f336a2fa0e3062a7ec9778a201e8bc",
+            "width": 63
+            }
+        ],
+        "name": "Ratatat",
+        "popularity": 69,
+        "type": "artist",
+        "uri": "spotify:artist:57dN52uHvrHOxijzpIgu3E"
+        },
+        {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1vCWHaC5f2uS3yhpwWbIA6"
+        },
+        "followers": {
+            "href": null,
+            "total": 12903483
+        },
+        "genres": [
+            "big room",
+            "dance pop",
+            "edm",
+            "pop",
+            "tropical house"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6",
+        "id": "1vCWHaC5f2uS3yhpwWbIA6",
+        "images": [
+            {
+            "height": 640,
+            "url": "https://i.scdn.co/image/81b19a403109c4fe528ee3972137127b85be9519",
+            "width": 640
+            },
+            {
+            "height": 320,
+            "url": "https://i.scdn.co/image/9c0d8fa969a9f5db6ff860203d6880a125e501d2",
+            "width": 320
+            },
+            {
+            "height": 160,
+            "url": "https://i.scdn.co/image/c55bc6f57b6bb297425c3ae694f92672dcf0e2c2",
+            "width": 160
+            }
+        ],
+        "name": "Avicii",
+        "popularity": 87,
+        "type": "artist",
+        "uri": "spotify:artist:1vCWHaC5f2uS3yhpwWbIA6"
+        }
+    ]
+    };
+  
   constructor() { }
 
   getResults(): IFullSearchResults {
     return this.dummydata;
   }
+
+  getArtist() {
+    return this.dummyartist;
+  }
+
+  getArtistAlbum() {
+    return this.dummyArtistAlbums;
+  }
+
+  getArtists() {
+    return this.dummyArtists;
+  }
+
 }

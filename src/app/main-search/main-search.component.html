@@ -16,7 +16,7 @@
 
         <ul class="resultados">
             <li *ngFor="let resultadoa of resultados.albums.items">
-                <a routerLink="#">
+                <a routerLink="/{{resultadoa.type}}/{{resultadoa.id}}">
                     <article class="album-box">
                         <img src="{{resultadoa.images[2].url}}">
                         <div class="info">
@@ -34,7 +34,7 @@
 
         <ul class="resultados">
             <li *ngFor="let resultadob of resultados.artists.items ">
-                <a routerLink="#">
+                <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">
                     <article class="album-box">
                         <img src="{{resultadob.images[2].url}}">
                         <div class="info">
@@ -48,7 +48,7 @@
   
         <ul class="resultados">
             <li *ngFor="let resultadoc of resultados.tracks.items ">
-                <a routerLink="#">
+                <a routerLink="/{{resultadoc.type}}/{{resultadoc.id}}">
                     <article class="album-box">
                         <div class="info">
                                 

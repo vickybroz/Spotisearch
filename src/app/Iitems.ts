@@ -6,17 +6,17 @@ export interface IFullSearchResults {
     albums: ISearchResult<IAlbum>;
 }
 
-interface ISearchResult<Type> {
+export interface ISearchResult<Type> {
     href: string;
     items: Array<Type>;
     limit: number;
-    next?: string;
+    next: string;
     offset: number;
-    previous?: string;
+    previous: string;
     total: number;
 }
 
-interface IArtist {
+export interface IArtist {
     href: string;
     external_urls: { spotify: string};
     followers: { href: string; total: number};
@@ -72,4 +72,35 @@ interface ITrack {
     track_number: number;
     type: string;
     uri: string;
+}
+
+export interface IAlbumSlim {
+    href: string;
+    items: Array<IAlbumPlus>;
+    limit: number;
+    next: string;
+    offset: number;
+    previous: string;
+    total: number;
+}
+
+interface IAlbumPlus {
+    album_group: string;
+    album_type: string;
+    artists: Array<IArtistSlim>;
+    available_markets: any;
+    external_urls: any;
+    href: string;
+    id: string;
+    images: Array<{ height: number; url: string; width: number }>;
+    release_date: string;
+    release_date_precision:string;
+    total_tracks:number;
+    name: string;
+    type: string;
+    uri: string;
+}
+
+export interface IArtists {
+    artists: Array<IArtist>;
 }
