@@ -18,7 +18,6 @@ export class ArtistComponent implements OnInit {
   ngOnInit() {
     this.resultado = this.spotifyService.dummyartist;
     this.resultadoAlbums = this.spotifyService.dummyArtistAlbums;
-    
   }
   
 

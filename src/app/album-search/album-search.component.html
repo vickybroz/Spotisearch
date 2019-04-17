@@ -1,7 +1,7 @@
 <section>
     
   
-    <h1>Artist Search</h1>
+    <h1>Album Search</h1>
 
     <p>Search your favourite artist over Spotify. Just enter an artist name in the following search box and enjoy!</p>
 
@@ -10,7 +10,7 @@
     </div>
 
     <ul class="resultados">
-        <li *ngFor="let resultadob of resultadoArtists.artists.items ">
+        <li *ngFor="let resultadob of resultadoAlbums.albums.items">
             <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">
                 <article class="album-box">
                     <img src="{{resultadob.images[2].url}}">

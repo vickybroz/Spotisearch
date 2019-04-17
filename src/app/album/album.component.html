@@ -1,5 +1,4 @@
-<section>
-
+<section >
     <p><i *ngFor="let genre of resultado.genres">
         {{genre| titlecase}}, 
     </i></p>
@@ -8,14 +7,13 @@
         <h1>{{resultado.name}}</h1>
     </div>
 
-    <p><a href="/">Home</a> / <a href="/artist">Artist</a> / <a href="#">{{resultado.name}}</a> </p>
+    <p><a href="/">Home</a> / <a href="/album">Album</a> / <a href="#">{{resultado.name}}</a> </p>
     <hr>
 
     <ul>
-        <li *ngFor="let resultadoa of resultadoAlbums.items">
+        <li *ngFor="let resultadoa of resultado.tracks.items">
             <a routerLink="/{{resultadoa.type}}/{{resultadoa.id}}">
                 <article>
-                    <img src="{{resultadoa.images[1].url}}">
                     <div class="info">
                             <p><strong>{{resultadoa.name}}</strong></p>
                             <p><i>Tipo: {{resultadoa.type | titlecase }}</i></p>
@@ -28,4 +26,9 @@
             </a>
         </li>
     </ul>
+
+
+ 
+
+
 </section>
