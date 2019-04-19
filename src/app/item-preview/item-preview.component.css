@@ -1,0 +1,104 @@
+
+.item {
+    max-width: 215px;
+    background-color:#0D1313;
+   border-radius: 5px;
+   padding:10px;
+   margin-bottom:20px;
+    margin-right:10px;
+}
+
+.item article.album {
+    min-height:340px;
+}
+
+.item img {
+    width:100%;
+}
+
+.item .details {
+    margin-bottom:10px;
+}
+
+.item .icon {
+    width:100%;
+    border:1px solid white;
+    color:white;
+    padding:20%;
+    text-align:center;
+    position:relative;
+    cursor:pointer;
+    background: rgba(203,96,179,1);
+    background: -moz-linear-gradient(45deg, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 27%, rgba(168,0,119,1) 67%, rgba(219,54,164,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(203,96,179,1)), color-stop(27%, rgba(193,70,161,1)), color-stop(67%, rgba(168,0,119,1)), color-stop(100%, rgba(219,54,164,1)));
+    background: -webkit-linear-gradient(45deg, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 27%, rgba(168,0,119,1) 67%, rgba(219,54,164,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 27%, rgba(168,0,119,1) 67%, rgba(219,54,164,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 27%, rgba(168,0,119,1) 67%, rgba(219,54,164,1) 100%);
+    background: linear-gradient(45deg, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 27%, rgba(168,0,119,1) 67%, rgba(219,54,164,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4', GradientType=1 );
+}
+
+.item .icon .fa-music{
+    font-size:4em;
+}
+
+.item .icon .fav {
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-size:1.5em;
+    padding:5%;
+}
+
+.item .icon .fav.selected {
+    color:yellow;
+}
+
+.item .fav:hover {
+    color:yellow;
+}
+
+.item .icon .fav.selected:hover {
+    color:black;
+}
+
+
+article.artist img {
+    border-radius:50%;
+}
+
+.item h2 {
+    color:white;
+    font-size:1.3em;
+    text-align:center;
+    margin-top:10px;
+    min-height:50px;
+}
+
+.item .details {
+    color:white;
+}
+
+.item a {
+    display:block;
+    width:100%;
+    border: 1px solid white;
+    color:white;
+    border-radius:20px;
+    font-size:1em;
+    padding:10px;
+    text-align:center;
+    text-decoration: none;
+}
+
+.item a:hover{
+    background-color:white;
+    color:#0D1313;
+}
+
+.item .fa-star {
+    text-align:right;
+}
+
+
+

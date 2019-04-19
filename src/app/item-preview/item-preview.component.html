@@ -1,0 +1,30 @@
+
+<li class="item">
+  <article class=" {{item.type}}">
+
+  <!-- Si es track -->
+    <div *ngIf="item.type === 'track'; else noTrack" class="icon">
+        <i class="fa fa-music"></i>
+        <div class="fav">
+            <i class="fa fa-star"></i>
+        </div>      
+    </div>
+   
+    <!-- else  -->
+    <ng-template #noTrack>
+       <img src="{{item.images[1].url}}" alt="{{item.name}}"> 
+    </ng-template>
+  
+    <h2>{{item.name}}</h2>
+    <div class="details">
+      <!-- Si es album -->
+      <span *ngFor="let artists of item.artists; let lastItem = last;">
+          {{artists.name}} <span  *ngIf="!lastItem"> / </span>
+      </span>
+      <!-- Si es track -->
+      <p *ngIf="track" > {{item.album.name}} </p>
+    </div> 
+    
+    <a routerLink="/{{item.type}}/{{item.id}}">Details</a>
+  </article>
+</li>

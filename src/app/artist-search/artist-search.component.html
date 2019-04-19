@@ -9,6 +9,8 @@
         <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input type="text"/>
     </div>
 
+
+
     <ul class="resultados">
         <li *ngFor="let resultadob of resultadoArtists.artists.items ">
             <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">

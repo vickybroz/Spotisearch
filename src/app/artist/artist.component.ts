@@ -6,6 +6,7 @@ import { SpotifyService } from '../spotify.service';
   templateUrl: './artist.component.html',
   styleUrls: ['./artist.component.css']
 })
+
 export class ArtistComponent implements OnInit {
 
   resultado:{};
@@ -22,3 +23,5 @@ export class ArtistComponent implements OnInit {
   
 
 }
+
+// ng on init cuando te suscribis, ngon destroy para desuscribirse. implements OnInit, OnDestroy

@@ -41,3 +41,10 @@
 .wrapper input {
     width: calc(100% - 80px);
 }
+
+
+ul.resultados {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}

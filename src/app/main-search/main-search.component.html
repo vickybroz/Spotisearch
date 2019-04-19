@@ -6,17 +6,36 @@
         <p>Search your favourite songs over Spotify. Just enter an artist name in the following search box and enjoy!</p>
     
         <div class="wrapper">
-            <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input type="text"/>
+            <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input #searchBox id="search-box" (input)="search(searchBox.value)" type="text"/>
         </div>
         <!-- aca voy a tirar unos resultados así a lo bestia para probar-->
       
         <!-- {{resultados | json }} -->
-
+        
 
 
         <ul class="resultados">
-            <li *ngFor="let resultadoa of resultados.albums.items">
-                <a routerLink="/{{resultadoa.type}}/{{resultadoa.id}}">
+
+            <app-item-preview 
+                *ngFor="let item of resultados.artists.items" 
+                [item]="item">
+            </app-item-preview>
+        </ul>
+        <ul class="resultados">
+   
+            <app-item-preview 
+                *ngFor="let item of resultados.albums.items" 
+                [item]="item">
+            </app-item-preview>
+        </ul>
+        <ul class="resultados">
+
+            <app-item-preview 
+                *ngFor="let item of resultados.tracks.items" 
+                [item]="item">
+            </app-item-preview>
+        </ul>
+                <!-- <a routerLink="/{{resultadoa.type}}/{{resultadoa.id}}">
                     <article class="album-box">
                         <img src="{{resultadoa.images[2].url}}">
                         <div class="info">
@@ -28,11 +47,11 @@
 
                         </div>         
                     </article>              
-                </a>
-            </li>
-        </ul>
+                </a> -->
+  
 
-        <ul class="resultados">
+
+        <!-- <ul class="resultados">
             <li *ngFor="let resultadob of resultados.artists.items ">
                 <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">
                     <article class="album-box">
@@ -64,7 +83,7 @@
                     </article>              
                 </a>
             </li>
-        </ul>
+        </ul> -->
 
    
   </section>

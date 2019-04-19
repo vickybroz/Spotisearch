@@ -19,5 +19,5 @@ export class AlbumComponent implements OnInit {
     this.resultado = this.spotifyService.dummyAlbum;
 //    this.resultadoTracks = this.spotifyService.dummyAlbumTracks;
   }
-  
+
 }

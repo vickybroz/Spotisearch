@@ -21,3 +21,4 @@ export class ArtistSearchComponent implements OnInit {
   ngOnInit() {
   }
 }
+

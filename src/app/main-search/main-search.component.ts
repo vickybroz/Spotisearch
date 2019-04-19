@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
+import { IFullSearchResults } from '../Iitems';
 
 @Component({
   selector: 'app-main-search',
@@ -8,19 +9,16 @@ import { SpotifyService } from '../spotify.service';
 })
 export class MainSearchComponent implements OnInit {
 
-  resultados:{};
+  resultados = {};
 
-  constructor(private spotifyService: SpotifyService) {
-
-  }
+  constructor(private spotifyService: SpotifyService) { }
 
   getData(): void {
-     this.resultados = this.spotifyService.dummydata;
+    this.resultados = this.spotifyService.dummydata;
   }
 
   ngOnInit() {
-    
+ 
   }
-  
 
 }

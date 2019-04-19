@@ -13,6 +13,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
 import { AlbumComponent } from './album/album.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
+import { ItemPreviewComponent } from './item-preview/item-preview.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AlbumSearchComponent } from './album-search/album-search.component';
     ArtistComponent,
     ArtistSearchComponent,
     AlbumComponent,
-    AlbumSearchComponent
+    AlbumSearchComponent,
+    ItemPreviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { AlbumSearchComponent } from './album-search/album-search.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SpotifyService],
+  providers: [SpotifyService], // sacar el servicio y ponerlo en el root desde el servicio
   bootstrap: [AppComponent]
 })
 export class AppModule { }
