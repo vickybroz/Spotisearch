@@ -2,6 +2,8 @@
     
         <p><strong>Welcome to</strong></p>
         <h1>Spotisearch</h1>
+
+        
     
         <p>Search your favourite songs over Spotify. Just enter an artist name in the following search box and enjoy!</p>
     
@@ -9,23 +11,34 @@
             <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input #searchBox id="search-box" (input)="search(searchBox.value)" type="text"/>
         </div>
 
-        <ul class="resultados">
-            <app-item-preview 
-                *ngFor="let item of resultados.artists.items" 
-                [item]="item">
-            </app-item-preview>
-        </ul>
-        <ul class="resultados">
-            <app-item-preview 
-                *ngFor="let item of resultados.albums.items" 
-                [item]="item">
-            </app-item-preview>
-        </ul>
-        <ul class="resultados">
-            <app-item-preview 
-                *ngFor="let item of resultados.tracks.items" 
-                [item]="item">
-            </app-item-preview>
-        </ul>
+       <div *ngIf="showRes === true">
+            <ul class="resultados">
+                <app-item-preview 
+                    *ngFor="let item of resultados.artists.items" 
+                    [item]="item">
+                </app-item-preview>
+            </ul>
+            <ul class="resultados">
+                <app-item-preview 
+                    *ngFor="let item of resultados.albums.items" 
+                    [item]="item">
+                </app-item-preview>
+            </ul>
+            <ul class="resultados">
+                <app-item-preview 
+                    *ngFor="let item of resultados.tracks.items" 
+                    [item]="item">
+                </app-item-preview>
+            </ul>
+        </div>
                
   </section>
+
+  <div *ngIf="favoritos !== null">
+        <app-favorite-tracks>
+        </app-favorite-tracks>
+  </div>
+        
+
+
+

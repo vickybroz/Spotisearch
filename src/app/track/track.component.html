@@ -1,0 +1,21 @@
+<section>
+
+  <!-- <p><i *ngFor="let genre of resultado.genres">
+      {{genre| titlecase}}, 
+  </i></p> -->
+  <div class="wapper">
+      
+      <h1>{{resultado.name}}</h1>
+  </div>
+  <p> <strong>Album:</strong> {{resultado.album.name}} - <strong>Artist:</strong>
+
+      <i *ngFor="let artistN of resultado.album.artists; let lastItem = last;">
+          {{artistN.name }} <span  *ngIf="!lastItem"> / </span>
+      </i>
+  </p>
+
+  <p><a href="/">Home</a> / <a href="/track">Track</a> / <a href="#">{{resultado.name}}</a> </p>
+  <hr>
+
+
+</section>

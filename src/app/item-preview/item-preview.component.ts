@@ -23,9 +23,11 @@ export class ItemPreviewComponent implements OnInit {
   checkFav(id){
       let favArray: Array<string> = JSON.parse(localStorage.getItem('spotyfav'));
       let esfav = false;
-      for( let fav of favArray){
-        if(fav === id){
-          esfav = true;
+      if(favArray !== null){
+        for( let fav of favArray){
+          if(fav === id){
+            esfav = true;
+          }
         }
       }
       return esfav;

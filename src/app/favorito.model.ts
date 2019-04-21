@@ -20,6 +20,10 @@ export class Favorito {
                 localStorage.setItem('spotyfav', JSON.stringify(itemsArray));
             }
         }
+        
+        if(itemsArray.length === 0 ){
+            localStorage.removeItem('spotyfav');
+        }
     }
 
 

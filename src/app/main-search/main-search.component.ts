@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
+import {Favorito} from '../favorito.model';
 import { IFullSearchResults } from '../Iitems';
 
 @Component({
@@ -9,13 +10,15 @@ import { IFullSearchResults } from '../Iitems';
 })
 export class MainSearchComponent implements OnInit {
 
-  resultados = {};
+  resultados: IFullSearchResults;
+  showRes: boolean = false;
+  favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
   constructor(private spotifyService: SpotifyService) { }
 
-  getData(): void {
+  getData(e): void {
     this.resultados = this.spotifyService.dummydata;
-    console.log(this.resultados);
+    this.showRes = true;
   }
 
   ngOnInit() {

@@ -83,23 +83,8 @@ img {
 ul.resultados {
     display: flex;
     align-items: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
-
-.flex-grid {
-    display: flex;
-  }
-.col {
-flex: 1;
-}
-
-.flex-grid-thirds {
-    display: flex;
-    justify-content: space-between;
-  }
-  .flex-grid-thirds .col {
-    width: 32%;
-  }
 
 
 @media (max-width: 400px) {
