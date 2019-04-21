@@ -15,10 +15,10 @@ export class MainSearchComponent implements OnInit {
 
   getData(): void {
     this.resultados = this.spotifyService.dummydata;
+    console.log(this.resultados);
   }
 
   ngOnInit() {
- 
   }
 
 }

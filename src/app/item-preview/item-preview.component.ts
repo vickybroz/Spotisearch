@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IAlbum } from '../Iitems';
-import { IArtist } from '../Iitems';
-import { ITrack } from '../Iitems';
+import {Favorito} from '../favorito.model';
 
 @Component({
   selector: 'app-item-preview',
@@ -10,12 +8,27 @@ import { ITrack } from '../Iitems';
 })
 export class ItemPreviewComponent implements OnInit {
   @Input() item: {};
+  favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
-
-  constructor() { }
+  constructor() {  }
 
   ngOnInit() {
-  
+    this.favoritos;
+  }
+
+  manageFav(id) {
+     new Favorito(id);
+  }
+
+  checkFav(id){
+      let favArray: Array<string> = JSON.parse(localStorage.getItem('spotyfav'));
+      let esfav = false;
+      for( let fav of favArray){
+        if(fav === id){
+          esfav = true;
+        }
+      }
+      return esfav;
   }
 
 }

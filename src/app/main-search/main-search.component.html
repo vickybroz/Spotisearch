@@ -8,82 +8,24 @@
         <div class="wrapper">
             <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input #searchBox id="search-box" (input)="search(searchBox.value)" type="text"/>
         </div>
-        <!-- aca voy a tirar unos resultados así a lo bestia para probar-->
-      
-        <!-- {{resultados | json }} -->
-        
-
 
         <ul class="resultados">
-
             <app-item-preview 
                 *ngFor="let item of resultados.artists.items" 
                 [item]="item">
             </app-item-preview>
         </ul>
         <ul class="resultados">
-   
             <app-item-preview 
                 *ngFor="let item of resultados.albums.items" 
                 [item]="item">
             </app-item-preview>
         </ul>
         <ul class="resultados">
-
             <app-item-preview 
                 *ngFor="let item of resultados.tracks.items" 
                 [item]="item">
             </app-item-preview>
         </ul>
-                <!-- <a routerLink="/{{resultadoa.type}}/{{resultadoa.id}}">
-                    <article class="album-box">
-                        <img src="{{resultadoa.images[2].url}}">
-                        <div class="info">
-                                <p><strong>{{resultadoa.name}}</strong></p>
-                                <p><i>Tipo: {{resultadoa.type | titlecase }}</i></p>
-                                <p  *ngFor="let resultadoa2 of resultadoa.artists">
-                                    <i>Artist: {{resultadoa2.name | titlecase}}</i>
-                                </p>
-
-                        </div>         
-                    </article>              
-                </a> -->
-  
-
-
-        <!-- <ul class="resultados">
-            <li *ngFor="let resultadob of resultados.artists.items ">
-                <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">
-                    <article class="album-box">
-                        <img src="{{resultadob.images[2].url}}">
-                        <div class="info">
-                                <p><strong>{{resultadob.name}}</strong></p>
-                                <p><i>Tipo: {{resultadob.type | titlecase }}</i></p>
-                        </div>         
-                    </article>              
-                </a>
-            </li>
-        </ul>
-  
-        <ul class="resultados">
-            <li *ngFor="let resultadoc of resultados.tracks.items ">
-                <a routerLink="/{{resultadoc.type}}/{{resultadoc.id}}">
-                    <article class="album-box">
-                        <div class="info">
-                                
-                                <p><strong>{{resultadoc.name}}</strong></p>
-                                <p><i> Tipo:  {{resultadoc.type | titlecase }}</i></p>
-                                <p  *ngFor="let resultadoc2 of resultadoc.artists">
-                                        <i>Artist: {{resultadoc2.name | titlecase}}</i>
-                                </p>
-                                <p><i> Album:  {{resultadoc.album.name | titlecase }}</i></p>
-
-    
-                        </div>         
-                    </article>              
-                </a>
-            </li>
-        </ul> -->
-
-   
+               
   </section>

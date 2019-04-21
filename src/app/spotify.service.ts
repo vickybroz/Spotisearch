@@ -7,7 +7,7 @@ import { IAlbums } from './Iitems';
 import { ITracks } from './Iitems';
 import { IAlbumFull } from './Iitems';
 
-@Injectable() //agregar app root
+@Injectable({providedIn: 'root'})
 
 export class SpotifyService {
 

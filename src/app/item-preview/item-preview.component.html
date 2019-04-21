@@ -5,7 +5,10 @@
   <!-- Si es track -->
     <div *ngIf="item.type === 'track'; else noTrack" class="icon">
         <i class="fa fa-music"></i>
-        <div class="fav">
+        <div 
+          class="fav" 
+          (click)="manageFav(item.id)"
+          [ngClass] = "{selected: checkFav(item.id)===true}">
             <i class="fa fa-star"></i>
         </div>      
     </div>

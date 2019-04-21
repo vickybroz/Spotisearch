@@ -9,20 +9,11 @@
         <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input type="text"/>
     </div>
 
-
-
     <ul class="resultados">
-        <li *ngFor="let resultadob of resultadoArtists.artists.items ">
-            <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">
-                <article class="album-box">
-                    <img src="{{resultadob.images[2].url}}">
-                    <div class="info">
-                            <p><strong>{{resultadob.name}}</strong></p>
-                            <p><i>Tipo: {{resultadob.type | titlecase }}</i></p>
-                    </div>         
-                </article>              
-            </a>
-        </li>
+        <app-item-preview 
+            *ngFor="let item of resultadoArtists.artists.items" 
+            [item]="item">
+        </app-item-preview>       
     </ul>
 
 

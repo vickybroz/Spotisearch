@@ -11,21 +11,10 @@
     <p><a href="/">Home</a> / <a href="/artist">Artist</a> / <a href="#">{{resultado.name}}</a> </p>
     <hr>
 
-    <ul>
-        <li *ngFor="let resultadoa of resultadoAlbums.items">
-            <a routerLink="/{{resultadoa.type}}/{{resultadoa.id}}">
-                <article>
-                    <img src="{{resultadoa.images[1].url}}">
-                    <div class="info">
-                            <p><strong>{{resultadoa.name}}</strong></p>
-                            <p><i>Tipo: {{resultadoa.type | titlecase }}</i></p>
-                            <p  *ngFor="let resultadoa2 of resultadoa.artists">
-                                <i>Artist: {{resultadoa2.name | titlecase}}</i>
-                            </p>
-
-                    </div>         
-                </article>              
-            </a>
-        </li>
+    <ul class="resultados">
+        <app-item-preview 
+            *ngFor="let item of resultadoAlbums.items" 
+            [item]="item">
+        </app-item-preview>       
     </ul>
 </section>

@@ -33,7 +33,7 @@ import { ItemPreviewComponent } from './item-preview/item-preview.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SpotifyService], // sacar el servicio y ponerlo en el root desde el servicio
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

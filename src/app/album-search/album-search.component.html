@@ -10,17 +10,10 @@
     </div>
 
     <ul class="resultados">
-        <li *ngFor="let resultadob of resultadoAlbums.albums.items">
-            <a routerLink="/{{resultadob.type}}/{{resultadob.id}}">
-                <article class="album-box">
-                    <img src="{{resultadob.images[2].url}}">
-                    <div class="info">
-                            <p><strong>{{resultadob.name}}</strong></p>
-                            <p><i>Tipo: {{resultadob.type | titlecase }}</i></p>
-                    </div>         
-                </article>              
-            </a>
-        </li>
+        <app-item-preview 
+            *ngFor="let item of resultadoAlbums.albums.items" 
+            [item]="item">
+        </app-item-preview>       
     </ul>
 
 
