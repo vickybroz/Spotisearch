@@ -21,10 +21,12 @@ export class Favorito {
             }
         }
         
-        if(itemsArray.length === 0 ){
-            localStorage.removeItem('spotyfav');
+        if(itemsArray !== null){
+            if(itemsArray.length === 0 ){
+                localStorage.removeItem('spotyfav');
+            }
         }
-    }
 
+    }
 
 }

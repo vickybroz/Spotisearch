@@ -6,7 +6,8 @@ import { IFullSearchResults } from '../Iitems';
 @Component({
   selector: 'app-main-search',
   templateUrl: './main-search.component.html',
-  styleUrls: ['./main-search.component.css']
+  styleUrls: ['./main-search.component.css'],
+  // providers: [SpotifyService],
 })
 export class MainSearchComponent implements OnInit {
 
@@ -16,7 +17,7 @@ export class MainSearchComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { }
 
-  getData(e): void {
+  getData(): void {
     this.resultados = this.spotifyService.dummydata;
     this.showRes = true;
   }

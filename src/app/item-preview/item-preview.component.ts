@@ -20,7 +20,7 @@ export class ItemPreviewComponent implements OnInit {
      new Favorito(id);
   }
 
-  checkFav(id){
+  checkFav(id:string){
       let favArray: Array<string> = JSON.parse(localStorage.getItem('spotyfav'));
       let esfav = false;
       if(favArray !== null){

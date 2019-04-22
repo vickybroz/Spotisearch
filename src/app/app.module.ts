@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MainSearchComponent } from './main-search/main-search.component';
 import { FavoriteTracksComponent } from './favorite-tracks/favorite-tracks.component';
-import { SpotifyService } from './spotify.service';
+// import { SpotifyService } from './spotify.service';
 import { AppRoutingModule } from './app-routing.module';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
