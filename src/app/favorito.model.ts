@@ -1,3 +1,4 @@
+
 export class Favorito {
     constructor(public id: string){
         this.manageFav(id);

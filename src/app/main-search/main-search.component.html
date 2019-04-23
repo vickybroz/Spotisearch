@@ -3,38 +3,37 @@
         <p><strong>Welcome to</strong></p>
         <h1>Spotisearch</h1>
 
-        
-    
         <p>Search your favourite songs over Spotify. Just enter an artist name in the following search box and enjoy!</p>
-    
+       
         <div class="wrapper">
-            <button (click)="getData()"><img src="assets/img/search.png" alt="search"></button><input #searchBox id="search-box" (input)="search(searchBox.value)" type="text"/>
+            <button><img src="assets/img/search.png" alt="search"></button><input #query type="text" (keyup)="buscar(query.value)" type="text"/>
         </div>
 
-       <div *ngIf="showRes === true">
-            <ul class="resultados">
-                <app-item-preview 
-                    *ngFor="let item of resultados.artists.items" 
-                    [item]="item">
-                </app-item-preview>
-            </ul>
-            <ul class="resultados">
-                <app-item-preview 
-                    *ngFor="let item of resultados.albums.items" 
-                    [item]="item">
-                </app-item-preview>
-            </ul>
-            <ul class="resultados">
-                <app-item-preview 
-                    *ngFor="let item of resultados.tracks.items" 
-                    [item]="item">
-                </app-item-preview>
-            </ul>
-        </div>
-               
+     <div *ngIf="resultados"  >
+        <ul class="resultados" *ngFor="let item of resultados | keyvalue" >
+           
+         <app-item-preview 
+                *ngFor="let item of item.value.items" 
+                [item]="item">
+            </app-item-preview>
+        </ul>
+    </div>
+        <!-- <ul *ngIf="resultados.albums" class="resultados" *n>
+            <app-item-preview 
+                *ngFor="let item of resultados.albums.items" 
+                [item]="item">
+            </app-item-preview>
+        </ul>
+        <ul *ngIf="resultados.tracks" class="resultados">
+            <app-item-preview 
+                *ngFor="let item of resultados.tracks.items" 
+                [item]="item">
+            </app-item-preview>
+        </ul> -->
+
   </section>
 
-  <div *ngIf="favoritos !== null">
+  <div *ngIf="favoritos">
         <app-favorite-tracks>
         </app-favorite-tracks>
   </div>

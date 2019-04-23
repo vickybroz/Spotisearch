@@ -12,17 +12,18 @@ import { IFullSearchResults } from '../Iitems';
 export class MainSearchComponent implements OnInit {
 
   resultados: IFullSearchResults;
-  showRes: boolean = false;
   favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
   constructor(private spotifyService: SpotifyService) { }
 
-  getData(): void {
-    this.resultados = this.spotifyService.dummydata;
-    this.showRes = true;
+  ngOnInit() {
   }
 
-  ngOnInit() {
+  buscar(query: string){
+    this.spotifyService.fullSearch( query )
+          .subscribe( (data: IFullSearchResults) => {
+            this.resultados = data;
+          });
   }
 
 }
