@@ -1,0 +1,40 @@
+
+input{
+    height:40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid gray;
+    border-left:0;
+    padding:10px;
+ }
+
+
+button {
+   height:40px;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border: 1px solid gray;
+   background-color:black;
+   cursor:pointer;
+}
+
+button img {
+    width:20%;
+    filter: invert(100%);
+ }
+
+button:hover {
+    background-color:aqua;
+ }
+
+button:hover img {
+    filter: invert(0);
+ }
+
+button {
+   width:80px;
+}
+
+input {
+    width: calc(100% - 80px);
+}

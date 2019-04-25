@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../spotify.service';
-import {Favorito} from '../favorito.model';
-import { IFullSearchResults } from '../Iitems';
+import { Component, OnInit, Input } from '@angular/core';
+import { SpotifyService } from '../services/spotify.service';
+import { IFullSearchResults } from '../interfaces/results.interface';
+import {Favorito} from '../models/favorito.model';
 
 @Component({
   selector: 'app-main-search',
@@ -12,6 +12,7 @@ import { IFullSearchResults } from '../Iitems';
 export class MainSearchComponent implements OnInit {
 
   resultados: IFullSearchResults;
+  queryGet:string;
   favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
   constructor(private spotifyService: SpotifyService) { }
@@ -19,11 +20,11 @@ export class MainSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  buscar(query: string){
+  search(query: string){
     this.spotifyService.fullSearch( query )
-          .subscribe( (data: IFullSearchResults) => {
-            this.resultados = data;
-          });
+    .subscribe( (data: IFullSearchResults) => {
+      this.resultados = data;
+    });    
   }
 
 }

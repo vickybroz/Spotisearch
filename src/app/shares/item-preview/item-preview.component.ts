@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Favorito} from '../favorito.model';
+import {Favorito} from '../../models/favorito.model';
 
 @Component({
   selector: 'app-item-preview',
@@ -7,6 +7,7 @@ import {Favorito} from '../favorito.model';
   styleUrls: ['./item-preview.component.css']
 })
 export class ItemPreviewComponent implements OnInit {
+ 
   @Input() item: {};
   favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
@@ -22,7 +23,7 @@ export class ItemPreviewComponent implements OnInit {
 
   checkFav(id:string) {
     let favArray: Array<string> = JSON.parse(localStorage.getItem('spotyfav'));
-    let esfav = false;
+    let esfav:boolean = false;
     if(favArray !== null){
         esfav = favArray.includes(id)
     }

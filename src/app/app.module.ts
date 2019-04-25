@@ -6,16 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MainSearchComponent } from './main-search/main-search.component';
-import { FavoriteTracksComponent } from './favorite-tracks/favorite-tracks.component';
-// import { SpotifyService } from './spotify.service';
+import { FavoriteTracksComponent } from './shares/favorite-tracks/favorite-tracks.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
 import { AlbumComponent } from './album/album.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
-import { ItemPreviewComponent } from './item-preview/item-preview.component';
+import { ItemPreviewComponent } from './shares/item-preview/item-preview.component';
 import { TrackComponent } from './track/track.component';
 import { TrackSearchComponent } from './track-search/track-search.component';
+import { SearchBarComponent } from './shares/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { TrackSearchComponent } from './track-search/track-search.component';
     ItemPreviewComponent,
     TrackComponent,
     TrackSearchComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

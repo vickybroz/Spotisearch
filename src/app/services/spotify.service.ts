@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map } from 'rxjs/operators';
 
-import { IFullSearchResults } from './Iitems';
-import { IArtist } from './Iitems';
-import { IAlbumSlim } from './Iitems';
-import { IArtists } from './Iitems';
-import { IAlbums } from './Iitems';
-import { ITracks } from './Iitems';
-import { IAlbumFull } from './Iitems';
-import { ITracksFull } from './Iitems';
-import { ITrackTotal } from './Iitems';
+import { IFullSearchResults } from './../interfaces/results.interface';
+import { IArtist } from './../interfaces/results.interface';
+import { IAlbumSlim } from './../interfaces/results.interface';
+import { IArtists } from './../interfaces/results.interface';
+import { IAlbums } from './../interfaces/results.interface';
+import { ITracks } from './../interfaces/results.interface';
+import { IAlbumFull } from './../interfaces/results.interface';
+import { ITracksFull } from './../interfaces/results.interface';
+import { ITrackTotal } from './../interfaces/results.interface';
 
 @Injectable({providedIn: 'root'})
 
@@ -22,7 +22,7 @@ export class SpotifyService {
      //Por ahora estoy puenteando la Oauth con el postman
       const headers=new HttpHeaders({
             Authorization:
-            "Bearer BQDSePquFdPqxay9ygWq9VGFqndaCMgvL-30qHjUDd3PsXfkJ_QCmoMJN8AwzLUrVPjkQLgMkr4Gpe_HvIL-sl0jHnwL3FYvL_RZOkrvsBRh1aY6-s4XZx6KRLdbNchDeokrVudH9ObXG2RbiFxrMn8Wc7U55HUf"
+            "Bearer BQCz5LDFEh16pP05EcRKGa5wFoCjfuGc3U2IoFcD6Ty0nXYLl5_FDy8LDtCq0xOTgIIEYf5h0EBeW2jKohQLN0cv_c_q2_L-3PUjums5-7kXyEg_OvDYCgjynKiurgM3IgZQQt-C2lWY_vtH2wVWnNpxQ9KX12jy"
     });
 
     return this.http.get(Url, {headers});
@@ -30,6 +30,10 @@ export class SpotifyService {
 
     fullSearch(query: string) {
         return this.spotysearch('search?q='+query+'&type=album,track,artist&limit=10').pipe(map(data => data));
+    }
+
+    favSearch(query: string){
+      return this.spotysearch('tracks/'+query).pipe(map(data => data));
     }
     
     // dummydata: IFullSearchResults = {
