@@ -22,7 +22,7 @@ export class SpotifyService {
      //Por ahora estoy puenteando la Oauth con el postman
       const headers=new HttpHeaders({
             Authorization:
-            "Bearer BQCz5LDFEh16pP05EcRKGa5wFoCjfuGc3U2IoFcD6Ty0nXYLl5_FDy8LDtCq0xOTgIIEYf5h0EBeW2jKohQLN0cv_c_q2_L-3PUjums5-7kXyEg_OvDYCgjynKiurgM3IgZQQt-C2lWY_vtH2wVWnNpxQ9KX12jy"
+            "Bearer BQBft8CQcyb_Po5nCmTXudDWy39CsXm9LT8CpJKfuhtgMcM54-IpCPYSUmJKXsLuK2erc6svLULMpbcI0lpVGlF9P4Di4CJaZ-TXZoWT-va77Z_CFQYsgCsS7y9ybTDgFwEAGMTXn7iH52IA3spjjlxGDMIUIBFy"
     });
 
     return this.http.get(Url, {headers});
@@ -32,9 +32,35 @@ export class SpotifyService {
         return this.spotysearch('search?q='+query+'&type=album,track,artist&limit=10').pipe(map(data => data));
     }
 
-    favSearch(query: string){
+    trackSearch(query: string){
       return this.spotysearch('tracks/'+query).pipe(map(data => data));
     }
+
+    albumsSearch(query: string) {
+      return this.spotysearch('search?q='+query+'&type=album&limit=10').pipe(map(data => data));
+    }
+
+    albumSearch(query: string) {
+      return this.spotysearch('albums/'+query).pipe(map(data => data));
+    }
+
+    artistsSearch(query: string) {
+      return this.spotysearch('search?q='+query+'&type=artist&limit=10').pipe(map(data => data));
+    }
+
+    artistSearch(query: string) {
+      return this.spotysearch('artists/'+query).pipe(map(data => data));
+    }
+
+    artistAlbumSearch(query: string) {
+      return this.spotysearch('artists/'+query+'/albums').pipe(map(data => data));
+    }
+
+    tracksSearch(query: string) {
+      return this.spotysearch('search?q='+query+'&type=track&limit=10').pipe(map(data => data));
+    }
+
+
     
     // dummydata: IFullSearchResults = {
     // "albums": {

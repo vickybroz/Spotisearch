@@ -8,14 +8,15 @@ import { AppComponent } from './app.component';
 import { MainSearchComponent } from './main-search/main-search.component';
 import { FavoriteTracksComponent } from './shares/favorite-tracks/favorite-tracks.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ArtistComponent } from './artist/artist.component';
-import { ArtistSearchComponent } from './artist-search/artist-search.component';
-import { AlbumComponent } from './album/album.component';
-import { AlbumSearchComponent } from './album-search/album-search.component';
 import { ItemPreviewComponent } from './shares/item-preview/item-preview.component';
-import { TrackComponent } from './track/track.component';
-import { TrackSearchComponent } from './track-search/track-search.component';
 import { SearchBarComponent } from './shares/search-bar/search-bar.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { AlbumFullComponent } from './albums/album-full/album-full.component';
+import { ItemFullComponent } from './shares/item-full/item-full.component';
+import { ArtistsComponent } from './artists/artists.component';
+import { ArtistFullComponent } from './artists/artist-full/artist-full.component';
+import { TracksComponent } from './tracks/tracks.component';
+import { TrackFullComponent } from './tracks/track-full/track-full.component';
 
 
 @NgModule({
@@ -23,14 +24,15 @@ import { SearchBarComponent } from './shares/search-bar/search-bar.component';
     AppComponent,
     MainSearchComponent,
     FavoriteTracksComponent,
-    ArtistComponent,
-    ArtistSearchComponent,
-    AlbumComponent,
-    AlbumSearchComponent,
     ItemPreviewComponent,
-    TrackComponent,
-    TrackSearchComponent,
     SearchBarComponent,
+    AlbumsComponent,
+    AlbumFullComponent,
+    ItemFullComponent,
+    ArtistsComponent,
+    ArtistFullComponent,
+    TracksComponent,
+    TrackFullComponent,
   ],
   imports: [
     BrowserModule,

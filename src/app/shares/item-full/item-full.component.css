@@ -41,3 +41,8 @@ li article .info {
     display:inline-block;
     vertical-align: top;
 }
+
+.breadcrumb a,
+.genre {
+ text-transform: capitalize;   
+}

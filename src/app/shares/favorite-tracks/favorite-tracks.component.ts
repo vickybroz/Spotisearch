@@ -19,7 +19,7 @@ export class FavoriteTracksComponent implements OnInit {
   }
 
    searchFavs(fav){
-      this.spotifyService.favSearch( fav )
+      this.spotifyService.trackSearch( fav )
       .subscribe( (data: ITrack) => {
         this.resultado = data;
       });    

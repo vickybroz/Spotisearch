@@ -1,4 +1,3 @@
-
 <li *ngIf="item.name" class="item">
   <article class=" {{item.type}}">
 
@@ -28,6 +27,6 @@
       <p *ngIf="track" > {{item.album.name}} </p>
     </div> 
     
-    <a routerLink="/{{item.type}}/{{item.id}}">Details</a>
+    <a routerLink="/{{item.type}}s/{{item.id}}">Details</a>
   </article>
 </li>

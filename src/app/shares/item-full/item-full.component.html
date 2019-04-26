@@ -1,0 +1,37 @@
+<section>
+
+  <p class="genre" *ngIf="fullitem.genres"><i *ngFor="let genre of fullitem.genres; let lastItem = last;">
+      {{genre}} <span *ngIf="!lastItem">/</span>
+  </i></p>
+  
+  <div class="wapper">
+      <img class="portada" src="{{fullitem.images[2].url}}">
+      <h1>{{fullitem.name}}</h1>
+      <p *ngIf="fullitem.type === 'album'">
+          <i *ngFor="let artist of fullitem.artists; let lastItem = last;">
+              {{artist.name}} <span *ngIf="!lastItem">,</span>
+          </i>
+      </p>
+  </div>
+
+  <p class="breadcrumb" ><a href="/">Home</a> / <a href="/{{fullitem.type}}s">{{fullitem.type}}</a> / <a href="#">{{fullitem.name}}</a> </p>
+  <hr>
+
+
+  <ul class="items">
+    <div *ngIf="fullitem.type === 'album'">
+        <app-item-preview 
+            *ngFor="let item of fullitem.tracks.items" 
+            [item]="item">
+        </app-item-preview>    
+    </div>   
+    <div *ngIf="fullitem.type === 'artist'">
+        <app-item-preview 
+            *ngFor="let item of fullitem.albums.items" 
+            [item]="item">
+        </app-item-preview>    
+    </div>   
+  </ul>
+
+
+</section>
