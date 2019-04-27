@@ -39,3 +39,7 @@ footer.main-footer p {
     color:white;
     margin:0;
 }
+
+footer a {
+    color: darkgray;
+}

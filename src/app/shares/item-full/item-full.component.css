@@ -46,3 +46,45 @@ li article .info {
 .genre {
  text-transform: capitalize;   
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align:left;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: black;
+    color: white;
+  }
+
+  .clickable {
+      cursor:pointer;
+  }
+
+  .clickable:hover {
+      color:limegreen;
+  }
+
+.fav {
+    font-size:1.5em;
+    cursor:pointer;
+}
+
+.fav.selected {
+    color:yellow;
+}
+
+.fav:hover {
+    color:yellow;
+}
+
+.icon .fav.selected:hover {
+    color:black;
+}

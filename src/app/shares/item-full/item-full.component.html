@@ -1,37 +1,53 @@
 <section>
 
-  <p class="genre" *ngIf="fullitem.genres"><i *ngFor="let genre of fullitem.genres; let lastItem = last;">
+  <p class="genre" *ngIf="fullitem?.genres"><i *ngFor="let genre of fullitem?.genres; let lastItem = last;">
       {{genre}} <span *ngIf="!lastItem">/</span>
   </i></p>
   
   <div class="wapper">
-      <img class="portada" src="{{fullitem.images[2].url}}">
-      <h1>{{fullitem.name}}</h1>
-      <p *ngIf="fullitem.type === 'album'">
-          <i *ngFor="let artist of fullitem.artists; let lastItem = last;">
+      <img class="portada" src="{{fullitem?.images[2].url}}">
+      <h1>{{fullitem?.name}}</h1>
+      <p *ngIf="fullitem?.type === 'album'">
+          <i *ngFor="let artist of fullitem?.artists; let lastItem = last;">
               {{artist.name}} <span *ngIf="!lastItem">,</span>
           </i>
       </p>
   </div>
 
-  <p class="breadcrumb" ><a href="/">Home</a> / <a href="/{{fullitem.type}}s">{{fullitem.type}}</a> / <a href="#">{{fullitem.name}}</a> </p>
+  <p class="breadcrumb" ><a href="/">Home</a> / <a href="/{{fullitem?.type}}s">{{fullitem?.type}}</a> / <a href="#">{{fullitem?.name}}</a> </p>
   <hr>
 
+  <div class="table">
+      <table>
+          <tr>
+            <th>Name</th>
+            <th class="clickable" (click)='clickToggle()'>Duration <i class="fa fa-sort"></i></th>
+            <th>Play</th>
+            <th>Fav</th>
+          </tr>
+          <tr *ngFor="let item of arraysort(fullitem?.tracks.items, toggle)" >
+            <td><strong> {{ item.name }}</strong></td>
+            <!-- Si llego le meto un pipe para que la duracion este en minutos -->
+            <td>{{ item.duration_ms }}</td>
+            <td>{{ item.uri }}</td>
+            <td class="fav" (click)="manageFav(item?.id)"
+            [ngClass] = "{selected: checkFav(item?.id)}">  
+              <!-- <iframe [src]="sanitizeUrl(item.uri)" height="50" width="100" ></iframe> -->
+              <i class="fa fa-star"></i>
+            </td>
+            
+          </tr>
+        </table>
+  </div>
 
-  <ul class="items">
-    <div *ngIf="fullitem.type === 'album'">
+
+  <!-- <ul class="resultados">
         <app-item-preview 
-            *ngFor="let item of fullitem.tracks.items" 
+            *ngFor="let item of fullitem?.tracks.items" 
             [item]="item">
-        </app-item-preview>    
-    </div>   
-    <div *ngIf="fullitem.type === 'artist'">
-        <app-item-preview 
-            *ngFor="let item of fullitem.albums.items" 
-            [item]="item">
-        </app-item-preview>    
-    </div>   
-  </ul>
+        </app-item-preview>      
+  </ul> -->
 
 
-</section>
+</section> 
+  

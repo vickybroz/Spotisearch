@@ -9,11 +9,6 @@
     padding: 10px;
     margin-bottom: 20px;
     margin-right: 10px;
-    min-height: 330px;
-}
-
-.item article.album {
-    min-height:340px;
 }
 
 .item img {
@@ -76,12 +71,20 @@ article.artist img {
     font-size:1.3em;
     text-align:center;
     margin-top:10px;
-    max-width:200px;
-    min-height:50px;
+    overflow: hidden;
+    height: 50px;
+}
+
+.item .artist-list {
+    height:50px;
+    overflow:hidden;
 }
 
 .item .details {
-    color:white;
+    color: white;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .item a {

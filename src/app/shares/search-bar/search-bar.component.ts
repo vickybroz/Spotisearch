@@ -20,3 +20,8 @@ export class SearchBarComponent implements OnInit {
 
 
 }
+
+
+/*
+
+https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow*/

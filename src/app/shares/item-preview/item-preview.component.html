@@ -1,32 +1,33 @@
-<li *ngIf="item.name" class="item">
-  <article class=" {{item.type}}">
+<li *ngIf="item?.name" class="item">
+  <article class=" {{item?.type}}">
 
   <!-- Si es track -->
-    <div *ngIf="item.type === 'track'; else noTrack" class="icon">
+    <div *ngIf="item?.type === 'track'; else noTrack" class="icon">
         <i class="fa fa-music"></i>
         <div 
           class="fav" 
-          (click)="manageFav(item.id)"
-          [ngClass] = "{selected: checkFav(item.id)===true}">
+          (click)="manageFav(item?.id)"
+          [ngClass] = "{selected: checkFav(item?.id)}">
             <i class="fa fa-star"></i>
         </div>      
     </div>
    
     <!-- else  -->
     <ng-template #noTrack>
-       <img src="{{item.images[1].url}}" alt="{{item.name}}"> 
+       <img *ngIf="item?.images[1]?.url" src="{{item?.images[1]?.url}}" alt="{{item?.name}}"> 
     </ng-template>
   
-    <h2>{{item.name}}</h2>
-    <div class="details">
+    <h2>{{item?.name}}</h2>
+    <div *ngIf="item?.type !='artist'" class="details">
       <!-- Si es album -->
-      <span *ngFor="let artists of item.artists; let lastItem = last;">
+      <span *ngFor="let artists of item?.artists; let lastItem = last;">
           {{artists.name}} <span  *ngIf="!lastItem"> / </span>
       </span>
+
       <!-- Si es track -->
-      <p *ngIf="track" > {{item.album.name}} </p>
+      <p *ngIf="item?.type === 'track'" > {{item?.album.name}} </p>
     </div> 
     
-    <a routerLink="/{{item.type}}s/{{item.id}}">Details</a>
+    <a routerLink="/{{item?.type}}s/{{item?.id}}">Details</a>
   </article>
 </li>

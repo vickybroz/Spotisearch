@@ -22,7 +22,7 @@ export class SpotifyService {
      //Por ahora estoy puenteando la Oauth con el postman
       const headers=new HttpHeaders({
             Authorization:
-            "Bearer BQBft8CQcyb_Po5nCmTXudDWy39CsXm9LT8CpJKfuhtgMcM54-IpCPYSUmJKXsLuK2erc6svLULMpbcI0lpVGlF9P4Di4CJaZ-TXZoWT-va77Z_CFQYsgCsS7y9ybTDgFwEAGMTXn7iH52IA3spjjlxGDMIUIBFy"
+            "Bearer BQCxcMWX-hCB92rnD8zEeGAqFiznxmbNxKtf84vJLZ3TWmsx3inYJ1m-ygFdrPRGAaIFxQWtdEztONbY70gMGLaixX2283sirfcRsGbAGFFpbQe0amS_GpwUxtuyatyUqpngQBu2fNA_qOsZmHivdV5g68EcunTd"
     });
 
     return this.http.get(Url, {headers});
