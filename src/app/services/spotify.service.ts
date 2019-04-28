@@ -22,7 +22,7 @@ export class SpotifyService {
      //Por ahora estoy puenteando la Oauth con el postman
       const headers=new HttpHeaders({
             Authorization:
-            "Bearer BQCxcMWX-hCB92rnD8zEeGAqFiznxmbNxKtf84vJLZ3TWmsx3inYJ1m-ygFdrPRGAaIFxQWtdEztONbY70gMGLaixX2283sirfcRsGbAGFFpbQe0amS_GpwUxtuyatyUqpngQBu2fNA_qOsZmHivdV5g68EcunTd"
+            "Bearer BQA3CrypzousI3o6RxfTDLgizxcIbnt89hI023sGK_CJD3wTuxjOR7_sAQ8QPA6sEEeeqx6NiMxPwqS5jlYo3e333UnNooeb7maQjPoCFwjbR6vi0laN1tg11yoE3WPlDOw409PhpfQadND6_H6xRh2YWxbYwZ13"
     });
 
     return this.http.get(Url, {headers});
@@ -57,7 +57,7 @@ export class SpotifyService {
     }
 
     tracksSearch(query: string) {
-      return this.spotysearch('search?q='+query+'&type=track&limit=10').pipe(map(data => data));
+      return this.spotysearch('tracks?ids='+query).pipe(map(data => data));
     }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../services/spotify.service';
-import { ITracks } from '../interfaces/results.interface';
+import { IArtist } from '../interfaces/results.interface';
 
 @Component({
   selector: 'app-artists',
@@ -9,7 +9,7 @@ import { ITracks } from '../interfaces/results.interface';
 })
 export class ArtistsComponent implements OnInit {
 
-  resultados:ITracks;
+  resultados:IArtist;
 
   constructor(private spotifyService: SpotifyService) {
   }
@@ -19,7 +19,7 @@ export class ArtistsComponent implements OnInit {
 
   search(query: string){
     this.spotifyService.artistsSearch( query )
-    .subscribe( (data: ITracks) => {
+    .subscribe( (data: IArtist) => {
       this.resultados = data;
     });
   }

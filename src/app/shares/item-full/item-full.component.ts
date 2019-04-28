@@ -11,6 +11,7 @@ import {Favorito} from '../../models/favorito.model';
 export class ItemFullComponent implements OnInit {
   
   @Input() fullitem: {};
+  @Input() albums: {};
   toggle: boolean = false;
   favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
@@ -49,4 +50,6 @@ export class ItemFullComponent implements OnInit {
     }
     return esfav;
   }
+
+
 }

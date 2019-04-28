@@ -12,7 +12,6 @@ import {Favorito} from '../models/favorito.model';
 export class MainSearchComponent implements OnInit {
 
   resultados: IFullSearchResults;
-  queryGet:string;
   favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
   constructor(private spotifyService: SpotifyService) { }
@@ -24,7 +23,7 @@ export class MainSearchComponent implements OnInit {
     this.spotifyService.fullSearch( query )
     .subscribe( (data: IFullSearchResults) => {
       this.resultados = data;
-    });    
+    });
   }
 
 }

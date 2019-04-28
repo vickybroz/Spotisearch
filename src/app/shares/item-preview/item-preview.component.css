@@ -108,6 +108,9 @@ article.artist img {
     text-align:right;
 }
 
+iframe {
+    width:100%;
+}
 
 
 @media (max-width: 600px) {

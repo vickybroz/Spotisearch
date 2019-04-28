@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
-import { ITrack } from '../../interfaces/results.interface';
+import { ITracksFull } from '../../interfaces/results.interface';
 
 @Component({
   selector: 'app-favorite-tracks',
@@ -11,20 +11,18 @@ import { ITrack } from '../../interfaces/results.interface';
 export class FavoriteTracksComponent implements OnInit {
 
   @Input() favoritos: [];
-  resultado: ITrack;
+  resultados: ITracksFull;
 
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+    
+    this.spotifyService.tracksSearch( this.favoritos.join())
+    .subscribe( (data: ITracksFull) => {
+      this.resultados = data;
+      console.log(this.resultados);
+    });
   }
-
-   searchFavs(fav){
-      this.spotifyService.trackSearch( fav )
-      .subscribe( (data: ITrack) => {
-        this.resultado = data;
-      });    
-   }
-
 
 
 }

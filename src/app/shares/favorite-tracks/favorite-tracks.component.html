@@ -1,17 +1,13 @@
-<!-- <section class="favorites">
+<section class="favorites">
     <h2>Favorite Tracks</h2>
 
-    <div  *ngFor="let fav of favoritos">
-        <ul class="resultados" [ngModel]="searchFavs(fav)">
+
+        <ul class="resultados">
 
             <app-item-preview 
-                *ngFor="let item of resultados" 
+                *ngFor="let item of resultados.tracks" 
                 [item]="item">
             </app-item-preview>
         </ul>
-        
-    </div>
 
-   
-
-</section> -->
+</section>

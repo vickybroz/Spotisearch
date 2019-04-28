@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Favorito} from '../../models/favorito.model';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-item-preview',
@@ -11,7 +12,7 @@ export class ItemPreviewComponent implements OnInit {
   @Input() item: {};
   favoritos: Favorito[] = JSON.parse(localStorage.getItem('spotyfav'));
 
-  constructor() {  }
+  constructor( private sanitizer: DomSanitizer ) {  }
 
   ngOnInit() {
     this.favoritos;
@@ -28,6 +29,10 @@ export class ItemPreviewComponent implements OnInit {
         esfav = favArray.includes(id)
     }
     return esfav;
+  }
+
+  sanitizeUrl(value: string){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(value);
   }
 
 }

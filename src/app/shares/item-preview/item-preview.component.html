@@ -19,15 +19,19 @@
   
     <h2>{{item?.name}}</h2>
     <div *ngIf="item?.type !='artist'" class="details">
-      <!-- Si es album -->
+    
       <span *ngFor="let artists of item?.artists; let lastItem = last;">
           {{artists.name}} <span  *ngIf="!lastItem"> / </span>
       </span>
 
       <!-- Si es track -->
-      <p *ngIf="item?.type === 'track'" > {{item?.album.name}} </p>
+   
     </div> 
-    
-    <a routerLink="/{{item?.type}}s/{{item?.id}}">Details</a>
+       <p *ngIf="item?.type === 'track'" >
+ajkhdsalkdh
+        <iframe [src]="sanitizeUrl('https://open.spotify.com/embed/track/'+item.id)" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </p>
+   
+    <a  *ngIf="item?.type !='track'"  routerLink="/{{item?.type}}s/{{item?.id}}">Details</a>
   </article>
 </li>

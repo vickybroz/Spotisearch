@@ -1,2 +1,54 @@
-<app-item-full [fullitem]="resultado">
-  </app-item-full>
+<section>
+
+  <p class="genre" *ngIf="resultado?.genres"><i *ngFor="let genre of resultado?.genres; let lastItem = last;">
+      {{genre}} <span *ngIf="!lastItem">/</span>
+  </i></p>
+  
+  <div class="wapper">
+      <img class="portada" src="{{resultado?.images[2].url}}">
+      <h1>{{resultado?.name}}</h1>
+
+  </div>
+  <p *ngIf="resultado?.type === 'album'">
+    <i *ngFor="let artist of resultado?.artists; let lastItem = last;">
+        {{artist.name}} <span *ngIf="!lastItem">,</span>
+    </i>
+  </p>
+
+  <p class="breadcrumb" ><a href="/">Home</a> / <a href="/{{resultado?.type}}s">{{resultado?.type}}</a> / <a href="#">{{resultado?.name}}</a> </p>
+  <hr>
+
+  <div class="table" *ngIf="resultado?.type === 'album'">
+      <table>
+          <tr>
+            <th>Name</th>
+            <th class="clickable" (click)='clickToggle()'>Duration <i class="fa fa-sort"></i></th>
+            <th>Play</th>
+            <th>Fav</th>
+            
+          </tr>
+          <tr *ngFor="let item of arraysort(resultado?.tracks.items, toggle)" >
+            <td><strong> {{ item.name }}</strong></td>
+            <!-- Si llego le meto un pipe para que la duracion este en minutos -->
+            <td>{{ item.duration_ms }}</td>
+            <td>
+              <iframe [src]="sanitizeUrl('https://open.spotify.com/embed/track/'+item.id)" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </td>
+
+            <td class="fav" (click)="manageFav(item?.id)"
+            [ngClass] = "{selected: checkFav(item?.id)}">  
+            
+              <i class="fa fa-star"></i>
+            </td>
+            
+          </tr>
+        </table>
+  </div>
+
+
+  <ul class="resultado" *ngIf="resultado?.type === 'artist'">
+    <app-item-preview 
+        *ngFor="let item of albums.items" 
+        [item]="item">
+    </app-item-preview>      
+  </ul>
