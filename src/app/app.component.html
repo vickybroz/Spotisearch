@@ -7,7 +7,7 @@
     <li><a href="/tracks">Tracks</a></li>
   </ul>
   <div class="buscador">
-    <app-search-bar (querySend)="search($event)"></app-search-bar>
+    <app-search-bar (querySend)="subject.next($event)"></app-search-bar>
     <div class="search-res" *ngIf="resultados">
 
       <ul class="resultados" *ngFor="let item of resultados | keyvalue" >

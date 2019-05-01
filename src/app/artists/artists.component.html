@@ -5,7 +5,7 @@
     <p>Search your favourite artist over Spotify. Just enter an artist name in the following search box and enjoy!</p>
     
     <div class="wrapper">
-        <app-search-bar (querySend)="search($event)"></app-search-bar>
+        <app-search-bar (querySend)="subject.next($event)"></app-search-bar>
     </div> 
 
     <div *ngIf="resultados">

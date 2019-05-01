@@ -1,11 +1,8 @@
 <section class="favorites">
     <h2>Favorite Tracks</h2>
-
-
         <ul class="resultados">
-
             <app-item-preview 
-                *ngFor="let item of resultados.tracks" 
+                *ngFor="let item of resultados?.tracks" 
                 [item]="item">
             </app-item-preview>
         </ul>

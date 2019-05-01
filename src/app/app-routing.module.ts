@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'albums', component: AlbumsComponent },
   { path: 'tracks', component: TracksComponent },
   { path: 'tracks/:id', component: TrackFullComponent },
+  { path: '**', component:MainSearchComponent }
 ];
 
 @NgModule({

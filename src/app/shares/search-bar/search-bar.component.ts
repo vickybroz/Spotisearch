@@ -11,8 +11,7 @@ export class SearchBarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onChange(query: string){
    this.querySend.emit(query);
