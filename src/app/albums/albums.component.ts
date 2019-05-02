@@ -24,15 +24,7 @@ export class AlbumsComponent implements OnInit {
       switchMap((query: string) => this.spotifyService.albumsSearch( query ))
     ).subscribe( (data: IAlbums) => {
       this.resultados = data;
-      console.log( this.resultados);
     });
   }
-
-  // search(query: string){
-  //   this.spotifyService.albumsSearch( query )
-  //   .subscribe( (data: IAlbums) => {
-  //     this.resultados = data;
-  //   });
-  // }
 
 }

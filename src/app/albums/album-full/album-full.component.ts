@@ -17,7 +17,6 @@ export class AlbumFullComponent implements OnInit {
   constructor(private spotifyService: SpotifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.route.paramMap.subscribe(params => {
       this.spotifyService.albumSearch( params.get('id') )
       .subscribe( (data: IAlbumFull) => {

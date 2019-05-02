@@ -14,26 +14,16 @@ export class TracksComponent implements OnInit {
   resultados:ITracks;
   public subject = new Subject<any>();
 
-  constructor(private spotifyService: SpotifyService) {
-  }
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
     this.subject.pipe(
       debounceTime(400),
       distinctUntilChanged(),
-      switchMap((query: string) => this.spotifyService.tracksSearch( query ))
+      switchMap((query: string) => this.spotifyService.trackSearch( query ))
     ).subscribe( (data: ITracks) => {
       this.resultados = data;
-      console.log( this.resultados);
     });
   }
-  
-
-  // search(query: string){
-  //   this.spotifyService.tracksSearch( query )
-  //   .subscribe( (data: ITracks) => {
-  //     this.resultados = data;
-  //   });
-  // }
 
 }

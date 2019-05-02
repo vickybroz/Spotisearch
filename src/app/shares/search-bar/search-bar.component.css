@@ -38,3 +38,11 @@ button {
 input {
     width: calc(100% - 80px);
 }
+
+.fa-times {
+   position: absolute;
+   right: 20px;
+   font-size: 20px;
+   top: 0px;
+}
+

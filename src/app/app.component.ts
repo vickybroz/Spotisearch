@@ -17,6 +17,8 @@ export class AppComponent {
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+    this.spotifyService.spotyAuth();
+
     this.subject.pipe(
       debounceTime(400),
       distinctUntilChanged(),
@@ -25,7 +27,8 @@ export class AppComponent {
       this.resultados = data;
       console.log( this.resultados);
     });
-   }
+  }
+   
 
 }
 

@@ -16,7 +16,6 @@ export class FavoriteTracksComponent implements OnInit {
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
-    console.log(this.favoritos.join());
     this.spotifyService.tracksSearch( this.favoritos.join())
     .subscribe( (data: ITracksFull) => {
       this.resultados = data;

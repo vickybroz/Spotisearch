@@ -89,3 +89,9 @@ table {
 .icon .fav.selected:hover {
     color:black;
 }
+@media (max-width: 600px) {
+.table {
+    overflow-x: scroll;
+  }
+
+}

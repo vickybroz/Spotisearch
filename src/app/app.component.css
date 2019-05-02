@@ -64,3 +64,21 @@ footer.main-footer p {
 footer a {
     color: darkgray;
 }
+
+@media (max-width: 600px) {
+    header.main-header {
+        height:auto;
+        display:block;
+    }
+
+    .mainmenu {
+        display: block;
+        text-align: center;
+    }
+
+    .logo {
+        display: block;
+        text-align: center;
+    }
+
+}

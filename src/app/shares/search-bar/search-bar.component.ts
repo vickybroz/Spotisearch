@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { query } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-search-bar',
@@ -16,6 +17,7 @@ export class SearchBarComponent implements OnInit {
   onChange(query: string){
    this.querySend.emit(query);
   }
+  
 
 
 }

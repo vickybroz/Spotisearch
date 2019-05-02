@@ -19,7 +19,7 @@ export class TrackFullComponent implements OnInit {
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
-      this.spotifyService.trackSearch( params.get('id') )
+      this.spotifyService.tracksSearch( params.get('id') )
       .subscribe( (data: ITrack) => {
         this.resultado = data;
         console.log(data);

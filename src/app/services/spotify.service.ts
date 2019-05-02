@@ -6,39 +6,71 @@ import { map } from 'rxjs/operators';
 
 export class SpotifyService {
 
+    auth: string;
+    clientId: string = 'cce87e63ca5c4cbcb4a6d39ad624606f';
 
     constructor(private http: HttpClient){}
+
+    //#access_token=BQDEaQZ78JYoxoLaTXjKaWIUBXd-ibC9cSC4_Q0-tPi7yiZFFmniuKO-6eriMcDCE_BfHd0_Vvl8YavpN8UhpLBMyrqzMrT5ETgfgTwoDyws4FFrzo0PODZJLvT19fgxYGuWZqE1a26dT4nTwer9CUyTIdcYUcV96LjLlL11etBAaw&token_type=Bearer&expires_in=3600
+
+    spotyAuth(){
+      const authEndpoint = 'https://accounts.spotify.com/authorize';
+         
+      this.auth = localStorage.getItem('auth');
+      const clientId = this.clientId;
+      const redirectUri = encodeURIComponent('http://localhost:4200/search');
+
+      const scopes = [
+        'user-read-birthdate',
+        'user-read-email',
+        'user-read-private'
+      ];
+
+      const response_type= 'token';
+
+      if( this.auth === null) {
+        window.location.href = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=${response_type}&show_dialog=true`;
+        const token :string = location.hash.split('access_token=')[1].split('&')[0]
+
+        localStorage.setItem('auth', token);
+      }
+    }
+
     spotysearch(query: string){
       const Url='https://api.spotify.com/v1/'+query;
      //Por ahora estoy puenteando la Oauth con el postman
       const headers=new HttpHeaders({
             Authorization:
-            "Bearer BQCgiXG5YWzXJ050ay4-54aUlyG5dXHHctARHg7ujph2krr2gAuljHKrzNwRqW1dLrqALJcLYVm-Hu5aVVuJKusL2040JgyqEjV7XBMhzs6NKX_qqm-BMrg2oxwdMmaNWdf2LcQPcZb8eHf70lb9RdYFfNeqzlKx"
+            "Bearer "+this.auth
     });
 
     return this.http.get(Url, {headers});
     }
 
-    // fullSearch(query)  {
-    //   return   query.pipe(
-    //       debounceTime(500),
-    //       distinctUntilChanged(),
-    //       switchMap((query: string) => this.spotysearch('search?q='+query+'&type=album,track,artist&limit=10').pipe(
-    //         map(data => data)
-    //       )));
-    // }
 
     fullSearch(query)  {
+      if(query) {
         return this.spotysearch('search?q='+query+'&type=album,track,artist&limit=10').pipe(
           map(data => data));
+        } else {
+          return [];
+        }
     }
 
-    trackSearch(query: string){
-      return this.spotysearch('tracks/'+query).pipe(map(data => data));
+    trackSearch(query){
+      if(query) {
+        return this.spotysearch('search?q='+query+'&type=track&limit=10').pipe(map(data => data));
+      } else {
+        return [];
+      }
     }
 
-    albumsSearch(query: string) {
+    albumsSearch(query) {
+      if(query) {
       return this.spotysearch('search?q='+query+'&type=album&limit=10').pipe(map(data => data));
+      } else {
+        return [];
+      }
     }
 
     albumSearch(query: string) {
@@ -46,7 +78,11 @@ export class SpotifyService {
     }
 
     artistsSearch(query: string) {
+      if(query) {
       return this.spotysearch('search?q='+query+'&type=artist&limit=10').pipe(map(data => data));
+      } else {
+        return [];
+      }
     }
 
     artistSearch(query: string) {

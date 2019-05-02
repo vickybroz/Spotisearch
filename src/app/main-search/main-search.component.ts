@@ -25,9 +25,9 @@ export class MainSearchComponent implements OnInit {
       debounceTime(400),
       distinctUntilChanged(),
       switchMap((query: string) => this.spotifyService.fullSearch( query ))
-    ).subscribe( (data: IFullSearchResults) => {
-      this.resultados = data;
-      console.log(  this.resultados);
+    ).subscribe( 
+      (data: IFullSearchResults) => {
+      this.resultados = data; 
     });
    }
 
