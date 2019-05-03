@@ -18,7 +18,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.spotifyService.spotyAuth();
-
     this.subject.pipe(
       debounceTime(400),
       distinctUntilChanged(),

@@ -8,10 +8,9 @@ export class SpotifyService {
 
     auth: string;
     clientId: string = 'cce87e63ca5c4cbcb4a6d39ad624606f';
+    error:any;
 
     constructor(private http: HttpClient){}
-
-    //#access_token=BQDEaQZ78JYoxoLaTXjKaWIUBXd-ibC9cSC4_Q0-tPi7yiZFFmniuKO-6eriMcDCE_BfHd0_Vvl8YavpN8UhpLBMyrqzMrT5ETgfgTwoDyws4FFrzo0PODZJLvT19fgxYGuWZqE1a26dT4nTwer9CUyTIdcYUcV96LjLlL11etBAaw&token_type=Bearer&expires_in=3600
 
     spotyAuth(){
       const authEndpoint = 'https://accounts.spotify.com/authorize';
@@ -47,6 +46,10 @@ export class SpotifyService {
     return this.http.get(Url, {headers});
     }
 
+    // testQuery(){
+    //   return this.spotysearch('search?q=elvis&type=artist&limit=1').pipe(
+    //     map(data => data));
+    // }
 
     fullSearch(query)  {
       if(query) {
@@ -100,35 +103,3 @@ export class SpotifyService {
 
 }
 
-/*RXJS
-
-Operadores: tap, map, ( switchmap, concatmap, mergemap). Operadores que le pasas al pipe
-.pipe(map(),tap()).suscribe()=>{}
-
-reactive programming
-
-switchmap para el auto complete. te cancela el request de la primer letra cuando vas x la segunda
-Concatmap concatena los observables que le pedis
-Mergemap dame como vengan
-
-Suscribe adentro de suscribe NO. Para eso estan los operadores.
-
-----
-Enviroment variables
-
-----
-
-Api client site
---
-
-reutilizar componente para la misma vista
-
-indexDB local storage
-
-refresh no perfer favoritos ni ruta.
-
-cuando carga la app pedir el token y guardarlo en el session storage
-
-augury/ angular js inspector
-
-*/
